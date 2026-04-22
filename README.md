@@ -22,7 +22,7 @@ The site includes:
 
 - HTML5
 - CSS3
-- Vanilla JavaScript
+- Vanilla JavaScript (I love vanilla Ice Cream)
 
 ## Repository structure
 
@@ -38,7 +38,7 @@ The site includes:
 | [`videos/`](./videos) | Embedded media resources |
 | [`journal.md`](./journal.md) | Project update log |
 
-## Running locally
+## Running locally (if you don't want to use the [link](https://gabintavernier.com)
 
 This is a static website (no build step required).
 
@@ -51,8 +51,8 @@ To follow major updates and milestones, see [`journal.md`](./journal.md).
 
 ## Screenshots
 
-<img width="1899" height="908" alt="Portfolio home page" src="https://github.com/user-attachments/assets/01b27ed5-e79a-4d4a-9569-736b1a11281d" />
-<img width="458" height="725" alt="Portfolio mobile view" src="https://github.com/user-attachments/assets/adc424dd-fe3b-4ff9-ba82-cbca42b290fb" />
+<img width="1899" height="908" alt="Portfolio home page" src="https://.com/user-attachments/assets/01b27ed5-e79a-4d4a-9569-736b1a11281d" />
+<img width="458" height="725" alt="Portfolio mobile view" src="https://gitcom/user-attachments/assets/adc424dd-fe3b-4ff9-ba82-cbca42b290fb" />
 
 ## License
 
