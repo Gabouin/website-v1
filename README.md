@@ -51,8 +51,12 @@ To follow major updates and milestones, see [`journal.md`](./journal.md).
 
 ## Screenshots
 
-<img width="1899" height="908" alt="Portfolio home page" src="https://.com/user-attachments/assets/01b27ed5-e79a-4d4a-9569-736b1a11281d" />
-<img width="458" height="725" alt="Portfolio mobile view" src="https://gitcom/user-attachments/assets/adc424dd-fe3b-4ff9-ba82-cbca42b290fb" />
+<img width=90% alt="image" src="https://github.com/user-attachments/assets/e59df914-aa59-4ad5-8930-d078a49c03ff" />
+<img width=90% alt="Capture d&#39;écran 2026-04-22 161154" src="https://github.com/user-attachments/assets/04f1e90e-f6cb-4a61-894a-cbef4a7cb3b8" />
+<img width=90% alt="image" src="https://github.com/user-attachments/assets/41412b1d-24a3-4400-985c-13f20695a8ce" />
+<img width=90% alt="image" src="https://github.com/user-attachments/assets/5dd61acb-4b68-42e4-b58d-6bdfcc12bd42" />
+<img width=90% alt="image" src="https://github.com/user-attachments/assets/23624954-8553-4ba6-91e1-856860b77851" />
+
 
 ## License
 
