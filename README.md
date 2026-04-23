@@ -17,6 +17,9 @@ The site includes:
 - bilingual interface (EN/FR)
 - dedicated pages for About, Skills, and Contact
 - responsive design for desktop and mobile
+- different themes that the user can choose
+-
+- more to come
 
 ## Tech stack
 
