@@ -3,7 +3,7 @@
 
 # Gabin Tavernier — Portfolio Website
 
-Personal portfolio website presenting all my projects in different domains. It also include contact, skills and about me pages and is in constant evolution as I make new project and add cool features to the website.
+Personal portfolio website presenting all my projects in different domains. It also include contact, skills and about me pages and is in constant evolution as I make new project and add cool features to the website. It include a traduction option in French and have different themes as I never know what I prefer.
 
 🌐 Live website: [gabintavernier.com](https://gabintavernier.com)
 
