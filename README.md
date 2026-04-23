@@ -25,7 +25,7 @@ The site includes:
 
 - HTML5
 - CSS3
-- Vanilla JavaScript (I love vanilla Ice Cream)
+- Vanilla JavaScript (I love vanilla ice cream)
 
 ## Repository structure
 
