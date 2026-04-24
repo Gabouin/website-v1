@@ -195,7 +195,7 @@ const PROJECT_DETAILS = {
   "space-collector": {
     title: "Space Collector",
     description: "Small arcade game built in JavaScript for the Sprig console. Collect items in space and avoid obstacles!",
-    images: ["images/sprig.png"],
+    images: ["images/space_collector.png"],
     video: null,
     github: [{ url: "https://github.com/Gabouin/Space-collector", label: "GitHub" }],
   
