@@ -592,7 +592,8 @@ ul {
 .project:hover {
     transform: translateY(-4px);
     background: #212121;
-    border-color: #333333;
+    border-color: #00ff88;
+    box-shadow: 0 0 18px rgba(0, 255, 136, 0.32);
 }
 
 .wip-badge {
@@ -615,9 +616,9 @@ ul {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #162416;
-    color: #a8f0c0;
-    border: 1px solid #407a50;
+    background: #122019;
+    color: #00ff88;
+    border: 1px solid #00ff88;
     font-size: 0.7rem;
     font-weight: 600;
     padding: 3px 10px;
@@ -651,6 +652,10 @@ ul {
     margin-bottom: 0.8rem;
     width: 100%;
     height: 180px;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
     object-fit: contain;
     object-position: center center;
     transition: transform 0.2s ease;
@@ -848,7 +853,7 @@ ul {
 
 /* Per-card accent colors */
 .skill-card--prog   { --accent: #818cf8; }
-.skill-card--hw     { --accent: #34d399; }
+.skill-card--hw     { --accent: #00ff88; }
 .skill-card--pcb    { --accent: #38bdf8; }
 .skill-card--soft   { --accent: #fbbf24; }
 .skill-card--domain { --accent: #fb923c; }
@@ -869,14 +874,14 @@ ul {
 }
 
 .skill-card--prog   .tag { background: #18173a; color: #a5b4fc; border-color: #2a2856; }
-.skill-card--hw     .tag { background: #0c2a1f; color: #6ee7b7; border-color: #1a3d2e; }
+.skill-card--hw     .tag { background: #122019; color: #54d992; border-color: #3fb877; }
 .skill-card--pcb    .tag { background: #0c2038; color: #7dd3fc; border-color: #163050; }
 .skill-card--soft   .tag { background: #2e2308; color: #fcd34d; border-color: #3d3010; }
 .skill-card--domain .tag { background: #2c1a04; color: #fdba74; border-color: #3e260a; }
 
 /* Gray tags inherit muted accent per card */
 .skill-card--prog   .tag--gray { background: #14132e; color: #6366f1; border-color: #252350; }
-.skill-card--hw     .tag--gray { background: #091e16; color: #34d399; border-color: #153528; }
+.skill-card--hw     .tag--gray { background: #122019; color: #54d992; border-color: #3fb877; }
 .skill-card--pcb    .tag--gray { background: #091828; color: #38bdf8; border-color: #122640; }
 .skill-card--soft   .tag--gray { background: #201904; color: #d97706; border-color: #33280a; }
 .skill-card--domain .tag--gray { background: #201200; color: #f97316; border-color: #301d06; }
@@ -967,7 +972,7 @@ ul {
     font-family: 'Fira Code', monospace;
 }
 
-.step-done    { background: #1a3020; color: #86efac; }
+.step-done    { background: #122019; color: #00ff88; border: 1px solid #00ff88; }
 .step-current { background: #1c5a7c; color: #fff; }
 .step-todo    { background: #2a2a2a; color: #666; }
 
@@ -1163,7 +1168,7 @@ ul {
 
 #hero-text .greeting {
     font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
+    font-size: 1.6rem;
     color: #00ff88;
     margin: 0 0 0.4rem;
     display: block;
@@ -1176,6 +1181,7 @@ ul {
     font-weight: 400;
     color: #ffffff;
     margin: 0 0 0.4rem;
+    margin-left: -5px;
     line-height: 1;
     letter-spacing: 2px;
     display: block;
