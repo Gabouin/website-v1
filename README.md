@@ -1,5 +1,6 @@
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/Status-Active%20Development-informational)
+![Hackatime Badge](https://hackatime-badge.hackclub.com/U0A2SJ7B739/Utilisateur)
 
 # Gabin Tavernier — Portfolio Website
 
