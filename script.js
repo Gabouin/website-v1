@@ -60,6 +60,16 @@ const TRANSLATIONS = {
   "skill-sec-sys":     { en: "Systems",                               fr: "Systèmes" },
   "contact-title":     { en: "CONTACT",                               fr: "CONTACT" },
   "contact-intro":     { en: "Want to get in touch? Feel free to reach out through any of these platforms:", fr: "Vous souhaitez me contacter ? Retrouvez-moi sur ces plateformes :" },
+  "contact-or":       { en: "OR",                                    fr: "OU" },
+  "contact-form-title": { en: "Send me a message",                    fr: "Envoyez-moi un message" },
+  "contact-form-name":  { en: "Name",                                 fr: "Nom" },
+  "contact-form-email": { en: "Your email",                           fr: "Votre email" },
+  "contact-form-subject": { en: "Subject",                            fr: "Sujet" },
+  "contact-form-message": { en: "Message",                            fr: "Message" },
+  "contact-form-send": { en: "Send",                                  fr: "Envoyer" },
+  "contact-form-sending": { en: "Sending...",                         fr: "Envoi en cours..." },
+  "contact-form-success": { en: "Message sent successfully.",         fr: "Message envoyé avec succès." },
+  "contact-form-error": { en: "Could not send message. Try again.",   fr: "Impossible d'envoyer le message. Réessayez." },
   "tag-smd-soldering":   { en: "SMD Soldering",        fr: "Soudure CMS" },
   "tag-pcb-assembly":    { en: "PCB Assembly",          fr: "Assemblage PCB" },
   "tag-rc-electronics":  { en: "RC Electronics",        fr: "Électronique RC" },
@@ -565,6 +575,23 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Keep WIP splash dismissed for the current browser session
+(function() {
+  var splash = document.getElementById('wip-splash');
+  var btn = document.getElementById('wip-enter-btn');
+  if (!splash || !btn) return;
+
+  var key = 'wipSplashDismissed';
+  if (sessionStorage.getItem(key) === '1') {
+    splash.style.display = 'none';
+  }
+
+  btn.addEventListener('click', function() {
+    sessionStorage.setItem(key, '1');
+    splash.style.display = 'none';
+  });
+})();
+
 // ── WIP roadmap toggle ──
 (function() {
   var btn = document.getElementById('wip-roadmap-btn');
@@ -832,5 +859,135 @@ window.addEventListener('DOMContentLoaded', function() {
       cancelAnimationFrame(rafId);
     });
   }
+})();
+
+// ============================================================
+// FLOATING & DRAGGABLE SKILL TAGS WITH PHYSICS
+// ============================================================
+(function() {
+  // Only initialize on skills page
+  if (!document.querySelector('.skills-grid')) return;
+
+  const allTagsLists = document.querySelectorAll('.skill-card .tags-list');
+  const tagPhysics = new Map();
+  let animationId = null;
+
+  // Physics configuration
+  const config = {
+    minSpeed: 0.01,
+    maxSpeed: 0.15,
+    bounceElasticity: 1,
+    driftChance: 0.006,
+    driftStrength: 0.04,
+    padding: 6
+  };
+
+  function randomSpeed() {
+    const direction = Math.random() > 0.5 ? 1 : -1;
+    const speed = config.minSpeed + Math.random() * (config.maxSpeed - config.minSpeed);
+    return direction * speed;
+  }
+
+  // Initialize tags with physics for each tags-list
+  allTagsLists.forEach(function(tagsList) {
+    const tags = tagsList.querySelectorAll('.tag');
+    const listPhysics = {
+      tags: [],
+      container: tagsList,
+      parentSection: tagsList.parentElement
+    };
+
+    tags.forEach(function(tag, index) {
+      tag.style.position = 'absolute';
+      tag.style.cursor = 'default';
+      tag.style.pointerEvents = 'none';
+
+      const parentRect = tagsList.parentElement.getBoundingClientRect();
+      const maxX = Math.max(config.padding, parentRect.width - tag.offsetWidth - config.padding * 2);
+      const maxY = Math.max(config.padding, parentRect.height - tag.offsetHeight - config.padding * 2);
+      
+      const tagData = {
+        element: tag,
+        x: config.padding + Math.random() * maxX,
+        y: config.padding + Math.random() * maxY,
+        vx: randomSpeed(),
+        vy: randomSpeed(),
+        width: tag.offsetWidth,
+        height: tag.offsetHeight
+      };
+
+      listPhysics.tags.push(tagData);
+    });
+
+    tagPhysics.set(tagsList, listPhysics);
+  });
+
+
+  // Physics update loop
+  function updatePhysics() {
+    tagPhysics.forEach(function(cardPhysics) {
+      const container = cardPhysics.container;
+      const parentSection = cardPhysics.parentSection;
+      const parentRect = parentSection.getBoundingClientRect();
+
+      const containerWidth = Math.max(0, parentRect.width - config.padding * 2);
+      const containerHeight = Math.max(0, parentRect.height - config.padding * 2);
+
+      cardPhysics.tags.forEach(function(tagData) {
+        if (Math.random() < config.driftChance) {
+          tagData.vx += (Math.random() - 0.5) * config.driftStrength;
+          tagData.vy += (Math.random() - 0.5) * config.driftStrength;
+        }
+
+        if (Math.abs(tagData.vx) < config.minSpeed) {
+          tagData.vx = tagData.vx < 0 ? -config.minSpeed : config.minSpeed;
+        }
+        if (Math.abs(tagData.vy) < config.minSpeed) {
+          tagData.vy = tagData.vy < 0 ? -config.minSpeed : config.minSpeed;
+        }
+
+        tagData.vx = Math.max(-config.maxSpeed, Math.min(config.maxSpeed, tagData.vx));
+        tagData.vy = Math.max(-config.maxSpeed, Math.min(config.maxSpeed, tagData.vy));
+
+        // Apply velocity
+        tagData.x += tagData.vx;
+        tagData.y += tagData.vy;
+
+        // Boundary collisions - LEFT & RIGHT
+        if (tagData.x <= 0 && tagData.vx < 0) {
+          tagData.x = 0;
+          tagData.vx = -tagData.vx * config.bounceElasticity;
+        }
+        if (tagData.x + tagData.width >= containerWidth && tagData.vx > 0) {
+          tagData.x = containerWidth - tagData.width;
+            // Boundary collisions - TOP & BOTTOM
+          tagData.vx = -tagData.vx * config.bounceElasticity;
+        }
+        if (tagData.y <= 0 && tagData.vy < 0) {
+          tagData.y = 0;
+          tagData.vy = -tagData.vy * config.bounceElasticity;
+        }
+        if (tagData.y + tagData.height >= containerHeight && tagData.vy > 0) {
+          tagData.y = containerHeight - tagData.height;
+          tagData.vy = -tagData.vy * config.bounceElasticity;
+        }
+
+        // Update position
+        tagData.element.style.left = tagData.x + 'px';
+        tagData.element.style.top = tagData.y + 'px';
+      });
+    });
+
+    animationId = requestAnimationFrame(updatePhysics);
+  }
+
+  updatePhysics();
+
+  // Cleanup on page unload
+  window.addEventListener('beforeunload', function() {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+    }
+  });
 })();
 

@@ -42,90 +42,83 @@
 
             <div class="skills-grid">
 
-                <div class="skills-row skills-row-top">
+                <!-- CARD 2 — HARDWARE & ELECTRONICS -->
+                <div class="skill-card skill-card--hw">
+                    <div class="skill-card-icon">&#9889;</div>
+                    <div class="skill-card-title" data-i18n="skill-hw">Hardware &amp; Electronics</div>
+                    <div class="skill-section">
+                        <div class="skill-section-label" data-i18n="skill-sec-mcus">MCUs</div>
+                        <div class="tags-list">
+                            <span class="tag" data-section="mcus">Arduino</span>
+                            <span class="tag" data-section="mcus">ESP32</span>
+                            <span class="tag" data-section="mcus">RP2040</span>
+                        </div>
+                    </div>
+                    <div class="skill-section">
+                        <div class="skill-section-label" data-i18n="skill-sec-tech">Techniques</div>
+                        <div class="tags-list">
+                            <span class="tag" data-section="tech" data-i18n="tag-smd-soldering">SMD Soldering</span>
+                            <span class="tag" data-section="tech" data-i18n="tag-pcb-assembly">PCB Assembly</span>
+                            <span class="tag" data-section="tech" data-i18n="tag-rc-electronics">RC Electronics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN CENTRE: Programming + Tools -->
+                <div class="skills-col">
 
                     <!-- CARD 1 — PROGRAMMING -->
                     <div class="skill-card skill-card--prog">
                         <div class="skill-card-icon">&lt;/&gt;</div>
                         <div class="skill-card-title" data-i18n="skill-prog">Programming</div>
-                        <div class="skill-card-subtitle">Languages I work with</div>
                         <div class="skill-section">
                             <div class="skill-section-label" data-i18n="skill-sec-langs">Languages</div>
                             <div class="tags-list">
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">C++</span>
-                                <span class="tag">JavaScript</span>
+                                <span class="tag tag--icon" data-section="langs"><img src="images/icons/html.svg" alt="HTML" class="tag-icon"><span>HTML</span></span>
+                                <span class="tag tag--icon" data-section="langs"><img src="images/icons/css.svg" alt="CSS" class="tag-icon"><span>CSS</span></span>
+                                <span class="tag tag--icon" data-section="langs"><img src="images/icons/cpp.svg" alt="C++" class="tag-icon"><span>C++</span></span>
+                                <span class="tag tag--icon" data-section="langs"><img src="images/icons/javascript.svg" alt="JavaScript" class="tag-icon"><span>JS</span></span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CARD 2 — HARDWARE & ELECTRONICS -->
-                    <div class="skill-card skill-card--hw">
-                        <div class="skill-card-icon">&#9889;</div>
-                        <div class="skill-card-title" data-i18n="skill-hw">Hardware &amp; Electronics</div>
-                        <div class="skill-card-subtitle">Boards, sensors &amp; soldering</div>
+                    <!-- CARD 4 — TOOLS -->
+                    <div class="skill-card skill-card--soft">
+                        <div class="skill-card-icon">&#128736;</div>
+                        <div class="skill-card-title" data-i18n="skill-tools">Tools</div>
                         <div class="skill-section">
-                            <div class="skill-section-label" data-i18n="skill-sec-mcus">MCUs</div>
+                            <div class="skill-section-label" data-i18n="skill-sec-vc">Software</div>
                             <div class="tags-list">
-                                <span class="tag">Arduino</span>
-                                <span class="tag">ESP32</span>
-                                <span class="tag">RP2040</span>
-                            </div>
-                        </div>
-                        <div class="skill-section">
-                            <div class="skill-section-label" data-i18n="skill-sec-tech">Techniques</div>
-                            <div class="tags-list">
-                                <span class="tag" data-i18n="tag-smd-soldering">SMD Soldering</span>
-                                <span class="tag" data-i18n="tag-pcb-assembly">PCB Assembly</span>
-                                <span class="tag" data-i18n="tag-rc-electronics">RC Electronics</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 3 — PCB & CAD -->
-                    <div class="skill-card skill-card--pcb">
-                        <div class="skill-card-icon">&#9881;</div>
-                        <div class="skill-card-title" data-i18n="skill-pcb">PCB &amp; CAD</div>
-                        <div class="skill-card-subtitle">Design, layout &amp; fabrication</div>
-                        <div class="skill-section">
-                            <div class="skill-section-label" data-i18n="skill-sec-pcb">PCB</div>
-                            <div class="tags-list">
-                                <span class="tag" data-i18n="tag-schematic-design">Schematic Design</span>
-                                <span class="tag" data-i18n="tag-pcb-layout">PCB Layout</span>
-                            </div>
-                        </div>
-                        <div class="skill-section">
-                            <div class="skill-section-label" data-i18n="skill-sec-3d">3D / CAD</div>
-                            <div class="tags-list">
-                                <span class="tag" data-i18n="tag-3d-printing">3D Printing FDM</span>
-                                <span class="tag" data-i18n="tag-technical-cad">Technical CAD</span>
+                                <span class="tag tag--icon" data-section="soft"><img src="images/icons/fusion360.svg" alt="Fusion 360" class="tag-icon"><span>Fusion 360</span></span>
+                                <span class="tag tag--icon" data-section="soft"><img src="images/icons/github.svg" alt="GitHub" class="tag-icon"><span>GitHub</span></span>
+                                <span class="tag tag--icon" data-section="soft"><img src="images/icons/kicad.svg" alt="KiCad" class="tag-icon"><span>KiCad</span></span>
+                                <span class="tag tag--icon" data-section="soft"><img src="images/icons/easyeda.svg" alt="EasyEDA" class="tag-icon"><span>EasyEDA</span></span>
+                                <span class="tag tag--icon" data-section="soft"><img src="images/icons/falstad.svg" alt="Falstad" class="tag-icon"><span>Falstad</span></span>
+                                <span class="tag tag--icon" data-section="soft"><img src="images/icons/vscode.svg" alt="VS Code" class="tag-icon"><span>VS Code</span></span>
                             </div>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="skills-row skills-row-bottom">
-
-                    <!-- CARD 4 — TOOLS -->
-                    <div class="skill-card skill-card--soft">
-                        <div class="skill-card-icon">&#128736;</div>
-                        <div class="skill-card-title" data-i18n="skill-tools">Tools</div>
-                        <div class="skill-card-subtitle">Software I use daily</div>
-                        <div class="skill-section">
-                            <div class="skill-section-label" data-i18n="skill-sec-vc">Software</div>
-                            <div class="tags-list">
-                                <span class="tag">Fusion 360</span>
-                                <span class="tag">GitHub</span>
-                                <span class="tag">KiCad</span>
-                                <span class="tag">EasyEDA</span>
-                                <span class="tag">Falstad</span>
-                                <span class="tag">VS Code</span>
-                            </div>
+                <!-- CARD 3 — PCB & CAD -->
+                <div class="skill-card skill-card--pcb">
+                    <div class="skill-card-icon">&#9881;</div>
+                    <div class="skill-card-title" data-i18n="skill-pcb">PCB &amp; CAD</div>
+                    <div class="skill-section">
+                        <div class="skill-section-label" data-i18n="skill-sec-pcb">PCB</div>
+                        <div class="tags-list">
+                            <span class="tag" data-section="pcb" data-i18n="tag-schematic-design">Schematic Design</span>
+                            <span class="tag" data-section="pcb" data-i18n="tag-pcb-layout">PCB Layout</span>
                         </div>
                     </div>
-
+                    <div class="skill-section">
+                        <div class="skill-section-label" data-i18n="skill-sec-3d">3D / CAD</div>
+                        <div class="tags-list">
+                            <span class="tag" data-section="3d" data-i18n="tag-3d-printing">3D Printing FDM</span>
+                            <span class="tag" data-section="3d" data-i18n="tag-technical-cad">Technical CAD</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>

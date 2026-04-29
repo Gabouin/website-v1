@@ -507,6 +507,103 @@ ul {
     color: #cccccc;
 }
 
+.contact-or {
+    width: 100%;
+    text-align: center;
+    margin: 1.4rem 0 1.2rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    color: #666;
+}
+
+.contact-form {
+    margin: 0 auto;
+    width: min(100%, 720px);
+    max-width: 720px;
+    display: grid;
+    gap: 0.55rem;
+    background: rgba(14, 14, 14, 0.9);
+    border: 1px solid #232323;
+    border-radius: 10px;
+    padding: 1.1rem 1.1rem 1.2rem;
+}
+
+.contact-form-title {
+    margin: 0 0 0.5rem;
+    font-family: 'VT323', monospace;
+    letter-spacing: 1px;
+    font-size: 1.65rem;
+    color: #ececec;
+}
+
+.contact-form label {
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7b7b7b;
+    font-family: 'Fira Code', monospace;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #2e2e2e;
+    border-radius: 7px;
+    background: #111111;
+    color: #d7d7d7;
+    padding: 0.65rem 0.75rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.82rem;
+    resize: vertical;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00ff88;
+    box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.15);
+}
+
+#contact-send-btn {
+    margin-top: 0.4rem;
+    justify-self: start;
+    border: 1px solid #00ff88;
+    background: transparent;
+    color: #00ff88;
+    padding: 0.55rem 1rem;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#contact-send-btn:hover {
+    background: rgba(0, 255, 136, 0.08);
+    box-shadow: 0 0 14px rgba(0, 255, 136, 0.2);
+}
+
+.contact-form-status {
+    margin: 0.35rem 0 0;
+    min-height: 1.2em;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.72rem;
+    color: #7a7a7a;
+}
+
+.contact-form-status.ok {
+    color: #54d992;
+}
+
+.contact-form-status.err {
+    color: #ff7373;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -815,12 +912,19 @@ ul {
 /* ── Skills page ── */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
     margin-top: 2.5rem;
-    max-width: 1100px;
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
+    align-items: stretch;
+}
+
+.skills-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .skills-row {
@@ -836,7 +940,13 @@ ul {
     padding: 1.8rem 2rem 1.6rem;
     text-align: left;
     position: relative;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Dim other cards when one is hovered */
+.skills-grid:has(.skill-card:hover) .skill-card:not(:hover) {
+    opacity: 0.35;
+    filter: brightness(0.5);
 }
 
 .skill-card:hover {
@@ -871,18 +981,27 @@ ul {
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    margin-top: 18px;
+    margin-top: 64px;
+    position: relative;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    padding: 8px;
+    overflow: hidden;
 }
 
 .skill-section-label {
-    font-size: 0.56rem;
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    font-size: 0.62rem;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #555;
-    min-width: 72px;
-    padding-top: 4px;
+    letter-spacing: 0.12em;
+    color: #4a4a4a;
     font-family: 'Fira Code', monospace;
-    flex-shrink: 0;
+    pointer-events: none;
+    z-index: 1;
+    display: block;
 }
 
 .skill-card .tags-list {
@@ -890,6 +1009,9 @@ ul {
     margin-top: 0;
     gap: 7px;
     row-gap: 8px;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* Per-card accent colors */
@@ -908,6 +1030,47 @@ ul {
     border: 1px solid #2a2a2a;
     color: #bbb;
     transition: border-color 0.15s, color 0.15s;
+    position: absolute;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.skill-card .tag.tag--icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+}
+
+.skill-card .tag .tag-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.skill-card .tag.tag--icon span {
+    font-size: 0.66rem;
+}
+
+/* Section-based visual differentiation */
+.skill-card .tag[data-section] {
+    opacity: 1;
+}
+
+/* First subsection slightly brighter */
+.skill-card .tag[data-section="langs"],
+.skill-card .tag[data-section="mcus"],
+.skill-card .tag[data-section="pcb"],
+.skill-card .tag[data-section="soft"] {
+    opacity: 1;
+}
+
+/* Second subsection slightly dimmer */
+.skill-card .tag[data-section="tech"],
+.skill-card .tag[data-section="3d"] {
+    opacity: 0.75;
+    filter: brightness(0.9);
 }
 
 .skill-card:hover .tag {
