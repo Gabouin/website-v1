@@ -267,7 +267,7 @@ const PROJECT_DETAILS = {
   "rc-plane": {
     title: "Remote Control Plane",
     description: "RC plane built with styrofoam and 3D printed parts. Uses servo motors, a brushless motor, a propeller, ESC, receiver and transmitter. I designed the structure on Canva and modelled it in Fusion 360. The plane is lightweight and flies well, with a flight time of around 5 minutes.",
-    images: ["images/gabin rc plane.png"],
+    images: ["images/rc plane all.png"],
     video: "https://www.youtube.com/embed/v7-GCenTMmM",
     github: [{ url: "https://github.com/Gabouin/Gabs-RC-plane", label: "GitHub" }],
   
@@ -283,7 +283,7 @@ const PROJECT_DETAILS = {
   "fan-reactor": {
     title: "Fan Plane Reactor",
     description: "3D printed fan that looks like a plane reactor. Powered via USB-C, with a switch and a potentiometer to regulate the motor speed. I love the look of airplane reactors and this project only requires basic electronics and 3D printed parts.",
-    images: ["images/fan plane reactor.png"],
+    images: null,
     video: "https://www.youtube.com/embed/CXMXyju0Se0",
     github: [{ url: "https://github.com/Gabouin/fan-plane-reactor", label: "GitHub" }],
     
@@ -291,7 +291,7 @@ const PROJECT_DETAILS = {
   "electric-lighter": {
     title: "Electric Lighter",
     description: "Electric lighter built from a vape battery found on the ground, a charging module, a toaster heating element, and a 3D-printed enclosure. Will be used to start campfires or just burn things for fun!",
-    images: ["images/el.png"],
+    images: null,
     video: "videos/el.mp4",
     videoPortrait: true,
     github: [{ url: "https://github.com/Gabouin/Electric-lighter", label: "GitHub" }],
@@ -324,7 +324,7 @@ const PROJECT_DETAILS = {
   "usb": {
     title: "USB Project",
     description: "Custom USB hub with 4 USB-A ports, designed to be compact and plug directly into the computer without extra cables thanks to a male USB connector. It includes overvoltage protection and one LED per port. In case of a short circuit, the corresponding LED turns off to indicate the source of the problem.",
-    images: ["images/banner usb.png"],
+    images: ["images/banner usb.png","images/render usb hub.png"],
     video: null,
     github: [{ url: "https://github.com/Gabouin/APX-USB-HUB", label: "GitHub" }],
     domain: ["hardware"],

@@ -1184,7 +1184,7 @@ ul {
 .modal-images {
     display: flex;
     flex-direction: column;
-    gap: 0px;
+    gap: 16px;
     margin: 22px 0 4px;
     align-items: center;
 }
@@ -1200,7 +1200,7 @@ ul {
 }
 
 .modal-thumb-square {
-    width: min(60vw, 300px);
+    width: min(20vw, 300px);
     aspect-ratio: 1 / 1;
     object-position: center;
 }
