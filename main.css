@@ -332,6 +332,23 @@ ul {
     text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
 }
 
+#name.name-with-image {
+    align-items: center;
+    gap: 0.7rem;
+    justify-content: center;
+}
+
+#name .name-label {
+    display: inline-block;
+}
+
+#name .name-side-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 #description {
     margin-top: 0.2em;
     margin-bottom: 0.3em;
@@ -1200,7 +1217,7 @@ ul {
 }
 
 .modal-thumb-square {
-    width: min(20vw, 300px);
+    width: min(60vw, 300px);
     aspect-ratio: 1 / 1;
     object-position: center;
 }
@@ -1351,8 +1368,8 @@ ul {
 #hero {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 4rem;
+    justify-content: space-between;
+    gap: 1.2rem;
     background: #1a1a1a;
     border-radius: 24px;
     padding: 2.5rem 3.5rem;
@@ -1367,7 +1384,7 @@ ul {
 
 #hero-text {
     text-align: left;
-    flex: 1;
+    flex: 0 1 560px;
 }
 
 #hero-text .greeting {
@@ -1389,6 +1406,15 @@ ul {
     line-height: 1;
     letter-spacing: 2px;
     display: block;
+}
+
+.hero-side-image {
+    width: 340px;
+    height: 340px;
+    object-fit: contain;
+    flex-shrink: 0;
+    align-self: center;
+    transform: translateX(-1.5rem);
 }
 
 #hero-text .subtitle {
@@ -1432,16 +1458,6 @@ ul {
     opacity: 0.6;
 }
 
-#hero img {
-    width: 220px;
-    height: 220px;
-    object-fit: contain;
-    border-radius: 16px;
-    background: #212121;
-    padding: 12px;
-    flex-shrink: 0;
-}
-
 /* ── Mobile overrides (≤768px) ── */
 @media (max-width: 768px) {
     #binary-canvas {
@@ -1462,8 +1478,13 @@ ul {
 
     #name { display: block; }
 
+    #name.name-with-image {
+        display: flex;
+    }
+
     #hero {
         flex-direction: column;
+        justify-content: center;
         padding: 2rem 1.5rem;
         margin: 2rem 1rem 0;
         text-align: center;
@@ -1507,9 +1528,10 @@ ul {
         font-size: 2.2rem;
     }
 
-    #hero img {
-        width: 160px;
-        height: 160px;
+    .hero-side-image {
+        width: 230px;
+        height: 230px;
+        transform: none;
     }
 
     #projects {
