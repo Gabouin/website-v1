@@ -18,11 +18,13 @@ The site includes:
 - project gallery with progress/status badges
 - project category and difficulty filters
 - bilingual interface (EN/FR)
-- dedicated pages for About, Skills, and Contact
+- dedicated pages for About, Skills, Contact and Newsletter
+- Forms to subscribe my newsletter or send me a direct message
 - responsive design for desktop and mobile
-- different themes that the user can choose
+- mousse tracking background effect
+- floating skills in skills.html
 -
-- more to come
+- more and less to come in the v2
 
 ## Tech stack
 
@@ -57,11 +59,15 @@ To follow major updates and milestones, see [`journal.md`](./journal.md).
 
 ## Screenshots
 
-<img width=90% alt="image" src="https://github.com/user-attachments/assets/e59df914-aa59-4ad5-8930-d078a49c03ff" />
-<img width=90% alt="Capture d&#39;écran 2026-04-22 161154" src="https://github.com/user-attachments/assets/04f1e90e-f6cb-4a61-894a-cbef4a7cb3b8" />
-<img width=90% alt="image" src="https://github.com/user-attachments/assets/41412b1d-24a3-4400-985c-13f20695a8ce" />
-<img width=90% alt="image" src="https://github.com/user-attachments/assets/5dd61acb-4b68-42e4-b58d-6bdfcc12bd42" />
-<img width=90% alt="image" src="https://github.com/user-attachments/assets/23624954-8553-4ba6-91e1-856860b77851" />
+<img width="1917" height="903" alt="image" src="https://github.com/user-attachments/assets/733db418-1981-4aa0-a224-7008b616214d" />
+<img width="1919" height="799" alt="image" src="https://github.com/user-attachments/assets/be7afd0c-8c35-468e-9b28-ed23a7e9c016" />
+<img width="1919" height="788" alt="image" src="https://github.com/user-attachments/assets/4213ffa8-5a82-423f-a247-5ef3f1179564" />
+<img width="1920" height="838" alt="skills responsive" src="https://github.com/user-attachments/assets/59b78590-a067-4c83-8d42-b474980d14a7" />
+<img width="1920" height="840" alt="contact" src="https://github.com/user-attachments/assets/ad7c6fcc-e8ef-44c2-817d-789b13ae2c51" />
+<img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/6cb3be8f-6840-4975-82c5-2288ddff0355" />
+
+
+
 
 
 ## License
